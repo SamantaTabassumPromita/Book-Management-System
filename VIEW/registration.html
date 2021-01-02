@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+     <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <style type="text/css">
+        @media (min-width: 992px) {
+            .card{
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" align="center" style="padding-top:2%;">
+        <img class="mb-3" src="img/logo.png" style="width: 10rem;" align="center">
+<!-- Material form login -->
+<div class="card mb-5">
+  <h5 class="card-header aqua-gradient white-text text-center py-4">
+    <strong>Registration</strong>
+  </h5>
+
+  <div class="card-body px-lg-5 pt-0">
+
+    <!-- Form -->
+<form class="needs-validation" action="registration.php" novalidate method="post">
+  <div class="form-row">
+    <div class="col-md-6 mb-3 md-form">
+      <label for="validationCustom012">First name</label>
+      <input type="text" class="form-control" name="fname" id="validationCustom012"  value=""
+        required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-6 mb-3 md-form">
+      <label for="validationCustom022">Last name</label>
+      <input type="text" class="form-control" name="lname" id="validationCustom022" value="" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="col-md-8 mb-3 md-form">
+      <label for="validationCustomUsername2">User ID (BracU ID)</label>
+      <input type="text" class="form-control" id="validationCustomUsername2" name="userId" pattern="[0-9]{8}" aria-describedby="inputGroupPrepend2"
+        required>
+      <div class="invalid-feedback">
+        Please use Bracu ID.
+      </div>
+    </div>
+    <div class="col-md-4 mb-3 md-form">
+           <select class="mdb-select"  name="dept" required>
+                <option value="" disabled>Department</option>
+                <option value="CSE" selected>CSE</option>
+                <option value="EEE">EEE</option>
+                <option value="BBA">BBA</option>
+                <option value="PHR">PHR</option>
+                <option value="ARC">ARC</option>
+            </select>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6 mb-3 md-form">
+            <input type="email" id="validationCustom072"  name="email" class="form-control" required>
+        <label for="validationCustom072">E-mail</label>
+        <div class="invalid-feedback">
+            Please provide E-mail Address
+        </div>
+        </div>
+    </div>
+    <div class="form-row">
+    <div class="col-md-6 mb-3 md-form">
+        <label for="validationCustom032">Password</label> 
+     <input type="password" class="form-control" id="validationCustom032" name="pass" required/>
+     <div id="divCheckPassword"></div>
+    </div>
+    <div class="col-md-6 mb-3 md-form">
+     <label for="validationCustom042">Retype Password</label> 
+     <input type="password" class="form-control" id="validationCustom042" onChange="isPasswordMatch();" required />
+    </div>
+    </div>
+  <div class="form-row">
+    <div class="col-md-12 mb-3 md-form">
+     <div class="md-form">
+    <input type="text" class="form-control" id="validationCustom052"  name="address"
+        required>
+    <label for="validationCustom052">Address</label>
+    <div class="invalid-feedback">
+        please provide an address
+    </div>
+    </div>
+    </div>
+</div>
+    <div class="form-row">
+    <div class="col-md-6 mb-3 md-form">
+      <label for="validationCustom052">Mobile Number</label>
+      <input type="tel" class="form-control" id="validationCustom052" name="mob" pattern="[0-9]{11}" required>
+      <div class="invalid-feedback">
+        Please provide a valid Number.
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <select class="mdb-select md-form"  name="sex" required>
+            <option value="" disabled>Sex</option>
+            <option value="Male" selected>Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="col-md-2 mb-3 md-form">
+        <input type="number" class="form-control" id="age" min="0" name="age" required>
+        <label for="age">age</label>
+
+    </div>
+</div>
+ 
+  <button class="btn btn-primary btn-md btn-success" type="submit">Register</button>
+</form>
+</div><!-- Form -->
+  </div>
+</div>
+
+ <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
+</script>
+<script type="text/javascript">
+    (function() {
+'use strict';
+window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+var validation = Array.prototype.filter.call(forms, function(form) {
+form.addEventListener('submit', function(event) {
+if (form.checkValidity() === false) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+}, false);
+})();
+</script>
+<script>
+function isPasswordMatch() {
+    var password = $("#validationCustom032").val();
+    var confirmPassword = $("#validationCustom042").val();
+
+    if (password != confirmPassword) $("#divCheckPassword").html("Passwords do not match!");
+    else $("#divCheckPassword").html("Passwords match.");
+}
+
+$(document).ready(function () {
+    $("#validationCustom042").keyup(isPasswordMatch);
+});    
+
+</script>
+</body>
+</html>

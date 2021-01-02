@@ -1,0 +1,26 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.zoom {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+   
+}
+.zoom button {
+    max-width: 100%;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+
+.zoom:hover button {
+    transform: scale(1.1);
+}

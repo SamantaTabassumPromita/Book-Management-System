@@ -1,0 +1,90 @@
+body{
+margin: 0;
+padding: 0;
+
+}
+body:before{
+	content: '';
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(more.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size:cover;
+	background-size: cover;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	filter: 
+}
+.contact-form{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+
+ -webkit-transform: translate(-50% , -50%);
+ -moz-transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+ -o-transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
+ width: 400px;
+ height: 500px;
+ padding: 80px 40px;
+ background: rgba(245, 245, 245, 0.5);
+
+
+}
+.avatar{
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: calc(-80px/2);
+	left: calc(50% - 40px);
+}
+.contact-form h2{
+margin: 0;
+padding: 0 0 20px;
+color: #000;
+text-align: center;
+text-transform: uppercase;
+
+}
+.contact-form p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+}
+.contact-form input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.contact-form input[type="email"],
+.contact-form input[type="password"]{
+border: none;
+border-bottom: 1px solid #000;
+background: transparent;
+outline: none;
+height: 35px;
+color: #000;
+font-size: 15px; 
+
+}
+.contact-form input[type=submit]{
+height: 30px;
+color: #000;
+font-size: 15px;
+background: white;
+cursor: pointer;
+border-radius: 25px;
+border: none;
+outline: none;
+margin-top: 15%;
+}
+input[type=checkbox]{
+	width: 10%;
+}
